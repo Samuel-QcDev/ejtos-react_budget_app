@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-//import { AppContext } from '../context/AppContext';
+
 const Budget = () => {
-    //const { budget } = useContext(AppContext);
     const [budget, setBudget] = useState('2000');
-    const { expenses } = useContext(AppContext)
+    const { expenses, currency } = useContext(AppContext)
     const totalExpenses = expenses.reduce((total, item) => {
         return (total += item.cost);
     }, 0);
@@ -21,14 +20,15 @@ const Budget = () => {
     }
 
     return (
-        <div className='alert alert-secondary'>
-            <span>Budget: £
+        <div className='alert alert-secondary' style={{alignmentBaseline:"central"}} >
+            <span>Budget:{currency}
                 <input
                     required='required'
                     type='number'
                     id='budget'
+                    step='10'
                     value={budget}
-                    style={{ marginLeft: '2rem' , size: 10}}
+                    style={{ marginLeft: '2rem' , size: 1}}
                     onChange={(event) => setBudget(event.target.value)}>
                 </input>                 
             </span>

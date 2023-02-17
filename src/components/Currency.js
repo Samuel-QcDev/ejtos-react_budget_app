@@ -1,30 +1,29 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 //import { AppContext } from '../context/AppContext';
 
 const Currency = (props) => {
 
-    const [currency, setCurrency] = useState('');
+const {dispatch } = useContext(AppContext);
 
-
-    
-
+    const changeCurrency = (val)=>{
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: val
+        })
+    }
     return (
-        <div>
-            <div className='row'>
-
-            <div className='alert alert-primary'>
-                <span>
-                    <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setCurrency(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="$" name="Dollar"> $ Dollar</option>
-                        <option value="£" name="Pound">£ Pound</option>
-                        <option value="€" name="Euro">€ Euro</option>
-                        <option value="₹" name="Ruppee">₹ Ruppee</option>
-                    </select>
-                </span>
-                </div>
-                </div>
+        <div className='alert alert-secondary' style={{alignmentBaseline:"central"}} >           
+           <select className="custom-select" style={{background:"lightgreen", border:"round", size:"10"}}  id="inputGroupSelect01" onChange={(event) => changeCurrency(event.target.value)}>
+                <option value="£" name="Pound">£ Pound</option>
+                <option value="€" name="Euro">€ Euro</option>
+                <option value="₹" name="Ruppee">₹ Ruppee</option>
+                <option value="$" name="Dollar"> $ Dollar</option>
+            </select>
+                
+                
+                
 
         </div>
     );

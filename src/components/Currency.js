@@ -14,8 +14,8 @@ const {dispatch } = useContext(AppContext);
         })
     }
     return (
-        <div className='alert alert-secondary' style={{alignmentBaseline:"central"}} >           
-           <select className="custom-select" style={{background:"lightgreen", border:"round", size:"30"}}  id="inputGroupSelect01" onChange={(event) => changeCurrency(event.target.value)}>
+        <div className='alert alert-secondary' style={{alignItems:"center"}} >           
+           <select className="custom-select" style={{background:"lightgreen", border:"round", size:"lg", color:"black"}}  id="inputGroupSelect01" onChange={(event) => changeCurrency(event.target.value)}>
                 <option value="£" name="Pound">£ Pound</option>
                 <option value="€" name="Euro">€ Euro</option>
                 <option value="₹" name="Ruppee">₹ Ruppee</option>

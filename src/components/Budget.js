@@ -20,15 +20,16 @@ const Budget = () => {
     }
 
     return (
-        <div className='alert alert-secondary' style={{alignItems:"flex-start"}} >
+        <div className='alert alert-secondary' >
             <span>Budget:{currency}
                 <input
                     required='required'
                     type='number'
                     id='budget'
                     step='10'
+                    maxLength={2}
                     value={budget}
-                    style={{ marginLeft: '2rem'}}
+                    style={{ marginLeft: '0.5rem', size:"sm"}}
                     onChange={(event) => setBudget(event.target.value)}>
                 </input>                 
             </span>

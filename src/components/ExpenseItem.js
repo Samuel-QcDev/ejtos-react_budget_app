@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { TiDelete } from 'react-icons/ti';
 import { AppContext } from '../context/AppContext';
 import { FaTimesCircle, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 

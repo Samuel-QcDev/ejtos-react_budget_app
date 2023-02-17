@@ -1,22 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+//import { AppContext } from '../context/AppContext';
 
 const Currency = (props) => {
 
     const [currency, setCurrency] = useState('');
 
 
-    const submitEvent = () => {
-
-
-    };
+    
 
     return (
         <div>
             <div className='row'>
 
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-
+            <div className='alert alert-primary'>
+                <span>
                     <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setCurrency(event.target.value)}>
                         <option defaultValue>Choose...</option>
                         <option value="$" name="Dollar"> $ Dollar</option>
@@ -24,7 +22,7 @@ const Currency = (props) => {
                         <option value="€" name="Euro">€ Euro</option>
                         <option value="₹" name="Ruppee">₹ Ruppee</option>
                     </select>
-
+                </span>
                 </div>
                 </div>
 
